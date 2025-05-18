@@ -12,8 +12,8 @@ scaler = joblib.load('scaler_l.pkl')
 svr_model = joblib.load("svr_model.pkl")
 svr_scaler = joblib.load("svr_scaler.pkl")
 
-neural_model = joblib.load("neural_model.pkl")
-neural_scaler = joblib.load("neural_scaler.pkl")
+# neural_model = joblib.load("neural_model.pkl")
+# neural_scaler = joblib.load("neural_scaler.pkl")
 
 xgb_model = joblib.load("xgb_model.pkl")
 xgb_scaler = joblib.load("xgb_scaler.pkl")
@@ -27,8 +27,8 @@ with open("rf_metrics.pkl", "rb") as f:
     rf_metrics = joblib.load(f)
 with open("xgb_metrics.pkl", "rb") as f:
     xgb_metrics = joblib.load(f)
-with open("neural_metrics.pkl", "rb") as f:
-    neural_metrics = joblib.load(f)
+# with open("neural_metrics.pkl", "rb") as f:
+#     neural_metrics = joblib.load(f)
 
 
 with open('encoders/category_encoder_1.pkl', 'rb') as f:
@@ -53,7 +53,7 @@ with open('encoders/wheel_encoder_1.pkl', 'rb') as f:
     wheel_encoder = joblib.load(f)
 
 st.title("Car Price Prediction App")
-model_option = st.selectbox("Choose a model", ["Linear Regression", "SVR","Random Forest","XGBoost","Neural Networks"])
+model_option = st.selectbox("Choose a model", ["Linear Regression", "SVR","Random Forest","XGBoost"])
 
 
 
@@ -68,11 +68,11 @@ elif model_option == "SVR":
     pred_scaler = svr_scaler
     pred_metrics = svr_metrics
     test_r2 = 0.663
-elif model_option == "Neural Network":
-    pred_model = neural_model
-    pred_scaler = svr_scaler
-    pred_metrics = neural_metrics
-    test_r2 = 0.7345
+# elif model_option == "Neural Network":
+#     pred_model = neural_model
+#     pred_scaler = neural_scaler
+#     pred_metrics = neural_metrics
+#     test_r2 = 0.7345
 elif model_option == "XGBoost":
     pred_model = xgb_model
     pred_scaler = xgb_scaler

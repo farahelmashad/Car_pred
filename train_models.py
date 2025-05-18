@@ -294,6 +294,11 @@ if __name__ == "__main__":
     # joblib.dump(xgb_model, 'xgb_model.pkl')
     # joblib.dump(xgb_scaler, 'xgb_scaler.pkl')
     # joblib.dump(xgb_metrics, 'xgb_metrics.pkl')
+    neural_model, neural_scaler, neural_metrics = train_neural_network(train_cleaned, test_cleaned, selected_features)
+    joblib.dump(neural_model, 'neural_model.pkl')
+    joblib.dump(neural_scaler, 'neural_scaler.pkl')
+    joblib.dump(neural_metrics, 'neural_metrics.pkl')
+
     
 
 
