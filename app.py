@@ -70,7 +70,7 @@ elif model_option == "SVR":
     test_r2 = 0.663
 elif model_option == "Neural Network":
     pred_model = neural_model
-    pred_scaler = neural_scaler
+    pred_scaler = svr_scaler
     pred_metrics = neural_metrics
     test_r2 = 0.7345
 elif model_option == "XGBoost":
